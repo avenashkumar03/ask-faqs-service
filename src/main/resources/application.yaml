@@ -1,0 +1,22 @@
+server:
+  port: 80
+
+spring:
+  data:
+    mongodb:
+      database: ${MONOGODB_DATABASE}
+      uri: ${MONOGODB_URI}
+application:
+  security:
+    cors:
+      allowed-hosts: "*"
+  configurations:
+    services:
+      cloudflare:
+        host: https://gateway.ai.cloudflare.com
+        access-token: ${CLOUDFLARE_ACCESS_TOKEN}
+        account-id: ${CLOUDFLARE_ACCOUNT_ID}
+        gateway-name: ${CLOUDFLARE_GATEWAY_NAME}
+        text-embedding-model: ${CLOUDFLARE_WORKER_AI_EMBEDDING_MODEL}
+        text-generation-model: ${CLOUDFLARE_WORKER_AI_TEXT_GENERATION_MODEL}
+
